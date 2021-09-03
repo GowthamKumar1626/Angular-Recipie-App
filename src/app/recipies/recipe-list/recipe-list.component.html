@@ -1,1 +1,25 @@
-<app-recipie-item> </app-recipie-item>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success">New recipe</button>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-xs-12">
+    <a href="#" class="list-group-item clearfix" *ngFor="let recipe of recipes">
+      <div class="float-start">
+        <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+        <p class="list-group-item-text">{{ recipe.description }}</p>
+      </div>
+      <div class="float-end">
+        <img
+          [src]="recipe.imagePath"
+          alt="{{ recipe.name }}"
+          class="img-fluid"
+          style="max-height: 100px"
+        />
+      </div>
+    </a>
+    <app-recipie-item> </app-recipie-item>
+  </div>
+</div>
